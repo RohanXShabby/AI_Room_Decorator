@@ -1,0 +1,22 @@
+{
+  "name": "MonoSpace - AI Room Redesign",
+  "short_name": "MonoSpace",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1216/1216649.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1216/1216649.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
