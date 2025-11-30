@@ -94,7 +94,9 @@ export const estimateRenovationCost = async (
          a) "Luxury" (High-End/Premium brands & materials)
          b) "Affordable" (Budget-friendly/IKEA/DIY alternatives)
       
-      Output strictly valid JSON (no markdown backticks) with this structure:
+      Output strictly valid JSON (no markdown backticks) with this structure. 
+      IMPORTANT: 'cost' and 'total' fields must be NUMERIC STRINGS ONLY (e.g. "3000", not "$3,000" or "3000 USD"). The UI will handle currency formatting.
+      
       {
         "luxury": {
           "tierName": "High Quality / Luxury",

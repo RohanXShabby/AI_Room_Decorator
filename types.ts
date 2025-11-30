@@ -38,3 +38,10 @@ export interface CostEstimationResult {
   luxury: BudgetTier;
   affordable: BudgetTier;
 }
+
+// Add global declaration for Razorpay
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}

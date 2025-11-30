@@ -1,5 +1,6 @@
 import React from 'react';
-import { LayoutTemplate, Moon, Sun } from 'lucide-react';
+import { LayoutTemplate, Moon, Sun, User } from 'lucide-react';
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -14,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
           <LayoutTemplate size={24} strokeWidth={1.5} className="text-black dark:text-white" />
           <h1 className="text-xl font-medium tracking-tight text-black dark:text-white">MONOSPACE</h1>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 md:gap-6">
           <button 
             onClick={toggleTheme}
             className="p-2 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md transition-colors text-black dark:text-white"
@@ -22,6 +23,27 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
           >
             {isDarkMode ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
           </button>
+          
+          {/* Clerk Authentication Buttons */}
+          <div className="flex items-center">
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="flex items-center gap-2 text-xs md:text-sm font-sans uppercase font-bold tracking-wider px-4 py-2 bg-black dark:bg-white text-white dark:text-black hover:opacity-80 transition-opacity rounded-sm border border-transparent shadow-sm">
+                  <User size={16} />
+                  Sign In
+                </button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton 
+                appearance={{
+                  elements: {
+                    avatarBox: "w-8 h-8 border border-black dark:border-white"
+                  }
+                }}
+              />
+            </SignedIn>
+          </div>
         </div>
       </div>
     </header>
